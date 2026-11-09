@@ -1,6 +1,6 @@
 # ihwa
 
-> DrinkChecker, CheerSeat, Chagok, SameBoat and Allong — iPhone apps from ihwa for drink tracking, baseball score widgets, hobby logs, subway chat and walking adventures.
+> iPhone apps from ihwa: DrinkChecker, CheerSeat, Chagok, SameBoat and Allong — drink tracking, baseball widgets, hobby logs, subway chat and walking adventures.
 
 ## Apps
 
