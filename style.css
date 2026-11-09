@@ -105,6 +105,7 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 /* 바닥글 */
 .foot{border-top:1px solid var(--line);padding:28px 0 40px;font-size:13px;color:var(--text-2)}
 .foot-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}.foot-links a{color:var(--text)}
+@media (max-width:640px){.foot{text-align:center}.foot-links{justify-content:center}.foot-links .fine{flex-basis:100%;margin:6px 0 0}}   /* 모바일 바닥글 가운데(11-09 종인님) */
 .fine{margin-left:auto}
 .entrance{padding:64px 16px}.entrance ul{list-style:none;padding:0;display:grid;gap:8px}
 
