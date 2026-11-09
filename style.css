@@ -2,11 +2,11 @@
    바탕은 따뜻한 미색, 공통 포인트 색 없이 앱마다 --tint(카드·구간 옅은 면)와 --solid(상세 첫 구간 전면)를 쓴다.
    다크에서는 같은 앱 색을 어두운 바탕에 섞어 쓴다(color-mix). */
 :root{--bg:#FAF8F4;--bg-2:#F1EEE8;--text:#141414;--text-2:#5c5c5c;--line:#E2DED6;--link:#0b63c5;--frame:#111;
---nav:rgba(250,248,244,.82);--tint-mix:15%;--row-mix:15%;--no-mix:100%;--tint-base:#FAF8F4;--wrap:1120px;--r:28px;--r-icon:22.37%;
+--nav:rgba(250,248,244,.82);--tint-mix:15%;--row-mix:15%;--no-mix:100%;--band-mix:18%;--band-base:#0b0b0b;--tint-base:#FAF8F4;--wrap:1120px;--r:28px;--r-icon:22.37%;
 font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Apple SD Gothic Neo","Pretendard","Noto Sans KR","Hiragino Sans","PingFang SC","Microsoft YaHei",sans-serif;
 color-scheme:light dark}
 @media (prefers-color-scheme:dark){:root{--bg:#111111;--bg-2:#181818;--text:#F4F4F4;--text-2:#A8A8A8;--line:#2A2A2A;--link:#5aa9ff;--frame:#2b2b2b;
---nav:rgba(17,17,17,.82);--tint-mix:22%;--row-mix:9%;--no-mix:45%;--tint-base:#141414}}
+--nav:rgba(17,17,17,.82);--tint-mix:22%;--row-mix:9%;--no-mix:45%;--band-mix:8%;--band-base:#030303;--tint-base:#141414}}
 :lang(zh-Hans){font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
 :lang(zh-Hant){font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
 :lang(ja){font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif}
@@ -165,6 +165,9 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 .r-phone img{display:block;width:100%;height:auto}
 .r-vis.panel{padding:clamp(28px,4vw,56px);border-radius:var(--r);background:color-mix(in srgb,var(--tint) calc(var(--row-mix) * 2),var(--tint-base))}
 .row.alt .r-vis.panel{background:var(--bg)}
+.row.dark{--text:#F4F4F4;--text-2:#B4B4B4;--frame:#3a3a3a;--no-mix:55%;background:color-mix(in srgb,var(--solid) var(--band-mix),var(--band-base));color:var(--text)}
+.row.dark+.row.dark{padding-top:0}
+.row.dark .r-vis.panel{background:rgba(255,255,255,.07)}
 .zoom{position:relative;display:block;width:100%;max-width:480px;overflow:hidden;border-radius:20px;background:var(--bg);box-shadow:0 20px 50px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.05)}
 .zoom picture{display:contents}.zoom img{position:absolute;max-width:none;height:auto}
 /* 히어로 화면 둘레의 조각(Flighty) */
