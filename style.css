@@ -54,7 +54,7 @@ h2{font-size:clamp(30px,4.4vw,52px)}
 .card{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:470px;padding:26px 26px 0;border-radius:var(--r);
 background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color:var(--text);transition:transform .25s ease}
 .card:hover{text-decoration:none;transform:translateY(-4px)}
-.card-no{position:absolute;right:22px;top:24px;font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:var(--text-2)}
+.card-no{position:absolute;right:22px;top:24px;max-width:55%;text-align:right;font-size:13px;font-weight:600;line-height:1.3;letter-spacing:.01em;color:var(--text-2)}   /* 앱스토어 카테고리(11-09) */
 .card strong{font-size:32px;font-weight:800;letter-spacing:-.035em;margin-top:16px}
 .card-sub{font-size:16px;font-weight:600;color:var(--text)}
 .card-desc{font-size:15px;color:var(--text-2);max-width:30ch;line-height:1.45}
