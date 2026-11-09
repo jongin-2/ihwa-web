@@ -116,7 +116,7 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 .shot-row li{flex:none;width:220px}.shot-row img{border-radius:18px}
 
 @media (max-width:760px){
- .home-h{padding:32px 0 24px}
+ .home-h{padding:32px 0 44px}   /* 11-09 종인님 "상단 문구랑 주량체커 사이가 너무 가깝지" */
  .card{min-height:430px}
  .hero-in{grid-template-columns:1fr;gap:8px;padding-top:40px;min-height:0;text-align:center}
  .hero-txt{padding-bottom:24px}.app-hero .icon{margin:0 auto}
