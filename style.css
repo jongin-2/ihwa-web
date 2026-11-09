@@ -41,8 +41,12 @@ h2{font-size:clamp(30px,4.4vw,52px)}
 .lang li a:hover{background:var(--bg-2);text-decoration:none}
 
 /* 홈 — 큰 한 줄 + 앱별 색 카드 */
-.home-h{font-size:clamp(24px,8.4vw,92px);line-height:.98;letter-spacing:-.05em;max-width:none;padding:48px 0 32px}
-.home-h .ln{display:inline-block}
+/* 홈 상단 — 옅은 띠(11-09 종인님 "M 옅은 띠형"·"더 다듬어", 비교: 이솝 미색 면+왼쪽 정렬 · 킨포크 여백 — 사진·앱·부제 없이 꽃 상징만) */
+.home-top{padding-top:24px;padding-bottom:16px}
+.home-band{position:relative;overflow:hidden;border-radius:var(--r);background:var(--bg-2);min-height:248px;padding:56px 64px;display:flex;align-items:center}
+.home-h{position:relative;font-size:clamp(30px,3.3vw,44px);font-weight:650;line-height:1.2;letter-spacing:-.035em;max-width:none}
+.home-h .ln{display:block}
+.home-fl{position:absolute;right:72px;top:50%;width:184px;height:184px;margin-top:-92px;color:color-mix(in srgb,var(--text) 8%,var(--bg-2))}
 .apps{padding:0 0 64px}
 .grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
 /* 앱 5개: 위 2개 넓게(3칸씩)·아래 3개(2칸씩) — 3열에 5개를 놓으면 빈칸이 남음(11-09) */
@@ -116,7 +120,8 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 .shot-row li{flex:none;width:220px}.shot-row img{border-radius:18px}
 
 @media (max-width:760px){
- .home-h{padding:32px 0 44px}   /* 11-09 종인님 "상단 문구랑 주량체커 사이가 너무 가깝지" */
+ .home-top{padding-top:12px}.home-band{min-height:0;padding:96px 24px 32px;align-items:flex-end}.home-h{font-size:28px}
+ .home-fl{right:24px;top:28px;margin-top:0;width:52px;height:52px}
  .card{min-height:430px}
  .hero-in{grid-template-columns:1fr;gap:8px;padding-top:40px;min-height:0;text-align:center}
  .hero-txt{padding-bottom:24px}.app-hero .icon{margin:0 auto}
