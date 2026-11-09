@@ -1,0 +1,180 @@
+/* ihwa.app — 디자인 안 A "앱별 색 카드"(11-09 종인님 선택, 비교: Lickability 원색 카드 · Not Boring 같은 틀+앱별 색)
+   바탕은 따뜻한 미색, 공통 포인트 색 없이 앱마다 --tint(카드·구간 옅은 면)와 --solid(상세 첫 구간 전면)를 쓴다.
+   다크에서는 같은 앱 색을 어두운 바탕에 섞어 쓴다(color-mix). */
+:root{--bg:#FAF8F4;--bg-2:#F1EEE8;--text:#141414;--text-2:#5c5c5c;--line:#E2DED6;--link:#0b63c5;--frame:#111;
+--nav:rgba(250,248,244,.82);--tint-mix:15%;--row-mix:15%;--no-mix:100%;--tint-base:#FAF8F4;--wrap:1120px;--r:28px;--r-icon:22.37%;
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Apple SD Gothic Neo","Pretendard","Noto Sans KR","Hiragino Sans","PingFang SC","Microsoft YaHei",sans-serif;
+color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#111111;--bg-2:#181818;--text:#F4F4F4;--text-2:#A8A8A8;--line:#2A2A2A;--link:#5aa9ff;--frame:#2b2b2b;
+--nav:rgba(17,17,17,.82);--tint-mix:22%;--row-mix:9%;--no-mix:45%;--tint-base:#141414}}
+:lang(zh-Hans){font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+:lang(zh-Hant){font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+:lang(ja){font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--text);font-size:17px;line-height:1.55;letter-spacing:-.01em;word-break:keep-all;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:6px}
+img{max-width:100%;height:auto}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+.narrow{max-width:760px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;z-index:9;background:var(--bg);padding:8px}
+h1,h2,h3{margin:0;line-height:1.05;letter-spacing:-.04em;font-weight:800;text-wrap:balance}
+h2{font-size:clamp(30px,4.4vw,52px)}
+.icon{border-radius:var(--r-icon);flex:none;box-shadow:0 0 0 .5px rgba(0,0,0,.1),0 6px 14px rgba(0,0,0,.14)}
+.tint{background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base))}
+
+/* 머리 막대 */
+.nav{position:sticky;top:0;z-index:5;background:var(--nav);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:8px;color:var(--text);font-weight:800;font-size:19px;letter-spacing:-.02em}.brand:hover{text-decoration:none}
+.logo{width:26px;height:26px}
+.nav-links{display:flex;align-items:center;gap:20px;font-size:14px}
+.lang{position:relative}.lang summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;color:var(--text);font-weight:600}
+.lang summary::-webkit-details-marker{display:none}
+.lang svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
+.lang ul{position:absolute;right:0;top:34px;margin:0;padding:8px;list-style:none;background:var(--bg);border:1px solid var(--line);border-radius:14px;min-width:170px;box-shadow:0 14px 40px rgba(0,0,0,.18)}
+.lang li a{display:block;padding:7px 10px;border-radius:9px;color:var(--text)}.lang li a[aria-current]{font-weight:700}
+.lang li a:hover{background:var(--bg-2);text-decoration:none}
+
+/* 홈 — 큰 한 줄 + 앱별 색 카드 */
+.home-h{font-size:clamp(24px,8.4vw,92px);line-height:.98;letter-spacing:-.05em;max-width:none;padding:48px 0 32px}
+.home-h .ln{display:inline-block}
+.apps{padding:0 0 64px}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+/* 앱 5개: 위 2개 넓게(3칸씩)·아래 3개(2칸씩) — 3열에 5개를 놓으면 빈칸이 남음(11-09) */
+.grid>li{grid-column:span 2;min-width:0}.grid>li:nth-child(-n+2){grid-column:span 3}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid>li,.grid>li:nth-child(-n+2){grid-column:span 1}.grid>li:last-child:nth-child(odd){grid-column:span 2}}
+@media (max-width:640px){.grid{grid-template-columns:1fr}.grid>li,.grid>li:nth-child(-n+2),.grid>li:last-child:nth-child(odd){grid-column:auto}}
+.app-hero .wip{text-align:left}
+@media (max-width:760px){.app-hero .wip{text-align:center}}
+.card{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:470px;padding:26px 26px 0;border-radius:var(--r);
+background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color:var(--text);transition:transform .25s ease}
+.card:hover{text-decoration:none;transform:translateY(-4px)}
+.card-no{position:absolute;right:22px;top:24px;font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;color:var(--text-2)}
+.card strong{font-size:32px;font-weight:800;letter-spacing:-.035em;margin-top:16px}
+.card-sub{font-size:16px;font-weight:600;color:var(--text)}
+.card-desc{font-size:15px;color:var(--text-2);max-width:30ch;line-height:1.45}
+.plats{display:flex;gap:6px;margin-top:10px}
+.plat{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;line-height:1;padding:6px 11px 6px 8px;border-radius:99px;background:color-mix(in srgb,var(--bg) 70%,transparent);color:var(--text)}
+.plat svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.chip{display:inline-flex;margin-top:10px;font-size:12px;font-weight:700;padding:6px 12px;border-radius:99px;background:color-mix(in srgb,var(--bg) 70%,transparent);color:var(--text)}
+.chip.big{font-size:15px;padding:10px 20px}
+.card-vis{margin-top:auto;align-self:center;position:relative;width:min(58%,280px);display:block}
+.card-vis .card-shot{width:100%;margin:0}
+.card-shot.back{position:absolute;left:0;top:0;transform:translate(46%,22%) rotate(8deg) scale(.9);opacity:.95;filter:saturate(.9)}
+.card-vis.zv{width:70%;margin-bottom:28px}
+.card-z{display:block;width:100%;height:auto;position:relative;border-radius:20px;box-shadow:0 22px 46px rgba(0,0,0,.26);transform:rotate(-5deg);transition:transform .35s ease}
+.card-z.back{position:absolute;left:0;top:0;transform:translate(40%,-10%) rotate(7deg) scale(.8)}
+.card:hover .card-z:not(.back){transform:rotate(-3deg) translateY(-4px)}
+.card:hover .card-shot.back{transform:translate(50%,18%) rotate(10deg) scale(.9)}
+.card-shot{margin-top:auto;align-self:center;width:58%;transform:translateY(16%) rotate(-6deg);position:relative;border-radius:13%/6%;border:6px solid var(--frame);box-shadow:0 26px 50px rgba(0,0,0,.28);transition:transform .35s ease}
+.card:hover .card-shot{transform:translateY(12%) rotate(-4deg)}
+.card-big{margin:auto auto 44px;width:136px;height:136px;transform:rotate(-8deg);box-shadow:0 28px 50px rgba(0,0,0,.25)}
+
+/* 앱 상세 — 첫 구간은 앱 색 전면 */
+.app-hero{background:var(--solid);color:var(--on);overflow:hidden}
+.hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);align-items:center;gap:40px;padding-top:64px;padding-bottom:0;min-height:560px}
+.hero-txt{padding-bottom:64px}
+.app-hero h1{font-size:clamp(48px,8vw,104px);letter-spacing:-.05em;margin-top:22px}
+.app-hero .sub{font-size:clamp(19px,2.4vw,25px);font-weight:600;margin:10px 0 0;opacity:.85}
+.app-hero .cta{margin-top:30px}
+.app-hero .note{opacity:.75;font-size:13px;margin:12px 0 0}
+.hero-shot{margin:0;align-self:end;justify-self:center;width:min(380px,100%);transform:translateY(12%) rotate(4deg)}
+.hero-shot img{display:block;width:100%;border-radius:13%/6%;border:8px solid #111;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.hero-big{align-self:center;justify-self:center;width:200px;height:200px;transform:rotate(-8deg);margin-bottom:64px}
+.get{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:99px;background:var(--on);color:var(--solid);font-weight:800;font-size:17px}
+.get:hover{text-decoration:none;opacity:.9}
+.get svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.app-hero .chip.soon{background:color-mix(in srgb,var(--on) 18%,transparent);color:var(--on)}
+
+
+/* 검색용 글 */
+.about{padding:88px 0 8px}.about h2,.faq h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:18px}
+.about p{font-size:clamp(18px,2vw,21px);line-height:1.6;margin:0;color:var(--text-2)}
+.faq{padding:56px 0 72px}
+.faq details{border-top:1px solid var(--line);padding:18px 0}.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--text-2);font-weight:400;font-size:22px;line-height:1}.faq details[open] summary::after{content:"−"}
+.faq details p{margin:10px 0 0;color:var(--text-2)}
+.end{background:var(--solid);color:var(--on);text-align:center;padding:72px 0}
+.end .icon{margin:0 auto}.end .cta{margin-top:22px}
+
+/* 바닥글 */
+.foot{border-top:1px solid var(--line);padding:28px 0 40px;font-size:13px;color:var(--text-2)}
+.foot-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}.foot-links a{color:var(--text)}
+.fine{margin-left:auto}
+.entrance{padding:64px 16px}.entrance ul{list-style:none;padding:0;display:grid;gap:8px}
+
+/* 스토어 이미지 임시 줄(화면 자료 없는 앱) */
+.shots{padding:48px 0}.shot-row{list-style:none;margin:0;padding:0 16px;display:flex;gap:16px;overflow-x:auto}
+.shot-row li{flex:none;width:220px}.shot-row img{border-radius:18px}
+
+@media (max-width:760px){
+ .home-h{padding:32px 0 24px}
+ .card{min-height:430px}
+ .hero-in{grid-template-columns:1fr;gap:8px;padding-top:40px;min-height:0;text-align:center}
+ .hero-txt{padding-bottom:24px}.app-hero .icon{margin:0 auto}
+ .hero-shot{width:min(280px,76%)}
+ .hero-big{width:140px;height:140px}
+ .fine{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){.card,.card-shot{transition:none}.card:hover{transform:none}}
+/* 앱스토어 QR — PC에서만(휴대폰·터치 기기는 단추로 바로 감) */
+.cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.end .cta{justify-content:center}
+.qr{display:flex;align-items:center;gap:12px;padding:8px 14px 8px 8px;border-radius:18px;background:color-mix(in srgb,var(--on) 14%,transparent)}
+.qr svg{width:92px;height:92px;padding:6px;background:#fff;border-radius:12px;fill:#111}
+.qr span{font-size:13px;font-weight:600;line-height:1.35;max-width:9em;opacity:.9}
+@media (max-width:760px),(hover:none){.qr{display:none}}
+/* 출시 전 알롱: 폰 틀 대신 부분 확대 카드 + '개발 중' 안내(allong.my 공개판과 같은 자료) */
+.wip{font-size:12px;opacity:.6;text-align:center;margin:12px 0 0}
+/* 앱 바로 가기 드롭다운(머리 막대) */
+.appm ul{min-width:200px}
+.appm li a{display:flex;align-items:center;gap:10px}
+.appm li img{width:24px;height:24px;border-radius:6px;flex:none}
+.appm li a[aria-current]{background:var(--bg-2)}
+@media (max-width:760px){.nav-links{gap:14px}.lang ul{position:fixed;left:auto;right:max(16px,env(safe-area-inset-right,0px));top:56px}}
+/* 앱 메뉴는 로고 옆(왼쪽), 언어는 오른쪽 끝 — 관례(제품 메뉴 왼쪽·설정 오른쪽) */
+.nav-l{display:flex;align-items:center;gap:22px}
+.appm{font-size:14px}.appm ul{left:0;right:auto}
+@media (max-width:760px){.nav-l{gap:14px}.appm ul{left:max(16px,env(safe-area-inset-left,0px));right:auto}}
+/* 앱 전환: 로고 | [지금 앱 ▾] */
+.nav-l .appm{padding-left:22px;border-left:1px solid var(--line)}
+.appm summary img{width:22px;height:22px;border-radius:6px}
+.appm summary span{font-size:15px}
+.lang .chev{width:14px;height:14px;stroke-width:2;opacity:.6;transition:transform .15s}
+.lang[open] .chev{transform:rotate(180deg)}
+@media (max-width:760px){.nav-l .appm{padding-left:14px}}
+/* 모바일 첫 구간은 가운데 정렬 — 받기 단추 줄(flex)도 가운데(11-09 종인님) */
+@media (max-width:760px){.app-hero .cta{justify-content:center}}
+
+/* 기능 구간(11-09 — Streaks: 번호·제목·한 줄 + 그림 하나를 번갈아, 토스: 연한 면 위 화면 조각) */
+.row{padding:clamp(56px,8vw,112px) 0}
+.row.alt{background:color-mix(in srgb,var(--tint) var(--row-mix),var(--tint-base))}
+.row-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(32px,6vw,88px)}
+.row.alt .r-txt{order:2}
+.r-txt{min-width:0}
+.r-no{display:block;font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;color:color-mix(in srgb,var(--solid) var(--no-mix),var(--text));margin-bottom:16px}
+.r-txt h2{margin:0 0 14px;text-wrap:balance}
+.r-txt p{margin:0;font-size:clamp(18px,2vw,22px);color:var(--text-2);max-width:24em}
+.r-vis{display:flex;justify-content:center;min-width:0}
+.r-phone{display:block;width:min(300px,78%);border-radius:13%/6%;overflow:hidden;border:7px solid var(--frame);box-shadow:0 26px 60px rgba(0,0,0,.2)}
+.r-phone img{display:block;width:100%;height:auto}
+.r-vis.panel{padding:clamp(28px,4vw,56px);border-radius:var(--r);background:color-mix(in srgb,var(--tint) calc(var(--row-mix) * 2),var(--tint-base))}
+.row.alt .r-vis.panel{background:var(--bg)}
+.zoom{position:relative;display:block;width:100%;max-width:480px;overflow:hidden;border-radius:20px;background:var(--bg);box-shadow:0 20px 50px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.05)}
+.zoom picture{display:contents}.zoom img{position:absolute;max-width:none;height:auto}
+/* 히어로 화면 둘레의 조각(Flighty) */
+.hero-shot{position:relative}
+.hf{position:absolute;display:block;width:64%;z-index:1}
+.hf .zoom{max-width:none;box-shadow:0 22px 50px rgba(0,0,0,.35)}
+.hf0{left:-38%;top:16%;transform:rotate(-4deg)}
+.hf1{right:-20%;top:56%;transform:rotate(3deg)}
+@media (max-width:760px){
+ .row-in{grid-template-columns:1fr;gap:28px}.row.alt .r-txt{order:0}
+ .r-phone{width:min(240px,70%)}
+ .hf{display:none}
+}

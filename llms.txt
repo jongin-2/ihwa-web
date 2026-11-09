@@ -1,0 +1,21 @@
+# ihwa
+
+> iPhone apps from ihwa — DrinkChecker alcohol tracker, CheerSeat baseball score widget, Chagok hobby log, SameBoat subway chat, and Allong walking adventure.
+
+## Apps
+
+- [DrinkChecker](https://ihwa.app/en/drinkchecker/): Drink Less with a Limit Widget
+- [CheerSeat](https://ihwa.app/en/cheerseat/): Baseball Score Widget
+- [Chagok](https://ihwa.app/en/chagok/): Snap hobbies, watch them stack
+- [SameBoat](https://ihwa.app/en/sameboat/): Subway chat & commute battles
+- [Allong](https://ihwa.app/en/allong/): Turn walks into adventures (coming soon)
+
+## Languages
+
+[한국어](https://ihwa.app/ko/), [English](https://ihwa.app/en/), [日本語](https://ihwa.app/ja/), [简体中文](https://ihwa.app/zh-hans/), [繁體中文](https://ihwa.app/zh-hant/), [Español](https://ihwa.app/es/), [Português (Brasil)](https://ihwa.app/pt-br/), [Deutsch](https://ihwa.app/de/), [Français](https://ihwa.app/fr/), [Italiano](https://ihwa.app/it/), [Русский](https://ihwa.app/ru/), [Türkçe](https://ihwa.app/tr/), [Bahasa Indonesia](https://ihwa.app/id/), [Tiếng Việt](https://ihwa.app/vi/)
+
+## Support
+
+- Contact: ihwa.support@gmail.com
+- Privacy policy: https://jongin-2.github.io/ihwa/privacy/en/
+- Terms: https://jongin-2.github.io/ihwa/terms/en/
