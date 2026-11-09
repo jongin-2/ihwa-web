@@ -64,7 +64,7 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 .card-desc{font-size:15px;color:var(--text-2);max-width:30ch;line-height:1.45}
 .plats{display:flex;gap:6px;margin-top:10px}
 .plat{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;line-height:1;padding:6px 11px 6px 8px;border-radius:99px;background:color-mix(in srgb,var(--bg) 70%,transparent);color:var(--text)}
-.plat svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.plat svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.plat svg.fill,.get svg.fill{fill:currentColor;stroke:none;margin-top:-2px}
 .chip{display:inline-flex;margin-top:10px;font-size:12px;font-weight:700;padding:6px 12px;border-radius:99px;background:color-mix(in srgb,var(--bg) 70%,transparent);color:var(--text)}
 .chip.big{font-size:15px;padding:10px 20px}
 .card-vis{margin-top:auto;align-self:center;position:relative;width:min(58%,280px);display:block}
