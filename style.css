@@ -54,7 +54,7 @@ h2{font-size:clamp(30px,4.4vw,52px)}
 .card{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:470px;padding:26px 26px 0;border-radius:var(--r);
 background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color:var(--text);transition:transform .25s ease}
 .card:hover{text-decoration:none;transform:translateY(-4px)}
-.card-no{position:absolute;right:22px;top:24px;max-width:55%;text-align:right;font-size:13px;font-weight:600;line-height:1.3;letter-spacing:.01em;color:var(--text-2)}   /* 앱스토어 카테고리(11-09) */
+.card-no{position:absolute;right:20px;top:22px;max-width:58%;display:inline-flex;align-items:center;padding:6px 12px;border-radius:999px;background:color-mix(in srgb,var(--bg) 72%,transparent);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);font-size:12.5px;font-weight:650;line-height:1.25;letter-spacing:.01em;color:var(--text);text-align:center}   /* 앱스토어 카테고리 배지(11-09 종인님 "배지형태로") */
 .card strong{font-size:32px;font-weight:800;letter-spacing:-.035em;margin-top:16px}
 .card-sub{font-size:16px;font-weight:600;color:var(--text)}
 .card-desc{font-size:15px;color:var(--text-2);max-width:30ch;line-height:1.45}
