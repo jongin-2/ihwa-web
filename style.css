@@ -157,7 +157,7 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 .row-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(32px,6vw,88px)}
 .row.alt .r-txt{order:2}
 .r-txt{min-width:0}
-.r-no{display:block;font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;color:color-mix(in srgb,var(--solid) var(--no-mix),var(--text));margin-bottom:16px}
+.r-no{display:block;font-weight:700;font-size:15px;line-height:1.3;letter-spacing:.01em;color:color-mix(in srgb,var(--solid) var(--no-mix),var(--text));margin-bottom:16px}
 .r-txt h2{margin:0 0 14px;text-wrap:balance}
 .r-txt p{margin:0;font-size:clamp(18px,2vw,22px);color:var(--text-2);max-width:24em}
 .r-vis{display:flex;justify-content:center;min-width:0}
