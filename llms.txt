@@ -4,10 +4,10 @@
 
 ## Apps
 
-- [DrinkChecker](https://ihwa.app/en/drinkchecker/): Drink Less with a Limit Widget
-- [CheerSeat](https://ihwa.app/en/cheerseat/): Baseball Score Widget
-- [Chagok](https://ihwa.app/en/chagok/): Snap hobbies, watch them stack
 - [SameBoat](https://ihwa.app/en/sameboat/): Subway chat & commute battles
+- [CheerSeat](https://ihwa.app/en/cheerseat/): Baseball Score Widget
+- [DrinkChecker](https://ihwa.app/en/drinkchecker/): Drink Less with a Limit Widget
+- [Chagok](https://ihwa.app/en/chagok/): Snap hobbies, watch them stack
 - [Allong](https://ihwa.app/en/allong/): Turn walks into adventures (coming soon)
 
 ## Languages
