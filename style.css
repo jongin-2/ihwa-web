@@ -52,14 +52,15 @@ h2{font-size:clamp(30px,4.4vw,52px)}
 .rw{color:var(--text);font-weight:650;display:inline-block;transition:opacity .35s,transform .35s}
 .rw.out{opacity:0;transform:translateY(-.4em)}
 /* 첫 띠 꽃: 선이 그려지며 피고 가운데가 맺힌 뒤 아주 천천히 돎(11-11 종인님 "안 2에 피는 꽃도 더해") */
-.home-fl path{stroke-dasharray:1;stroke-dashoffset:1;animation:fl-draw 1.8s .2s ease-in-out forwards}
-.home-fl circle{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:fl-pop .6s 1.6s ease-out forwards}
+.home-fl path{stroke-dasharray:1;stroke-dashoffset:1;animation:fl-draw 10s .2s ease-in-out infinite}
+.home-fl circle{transform-box:fill-box;transform-origin:center;transform:scale(0);animation:fl-pop 10s .2s ease-out infinite}
 .home-fl{animation:fl-spin 90s linear infinite}
-@keyframes fl-draw{to{stroke-dashoffset:0}}
-@keyframes fl-pop{70%{transform:scale(1.15)}to{transform:scale(1)}}
+/* 10초마다 다시 핌: 0~2초 선 그리기 → 가운데 맺힘 → 8.5초까지 머묾 → 사라졌다 다시(11-12 종인님 "너무 작고 한번이라 잘 안보이는") */
+@keyframes fl-draw{0%{stroke-dashoffset:1;opacity:1}20%,85%{stroke-dashoffset:0;opacity:1}95%{stroke-dashoffset:0;opacity:0}100%{stroke-dashoffset:1;opacity:0}}
+@keyframes fl-pop{0%,17%{transform:scale(0);opacity:1}22%{transform:scale(1.15)}25%,85%{transform:scale(1);opacity:1}95%,100%{transform:scale(1);opacity:0}}
 @keyframes fl-spin{to{rotate:360deg}}
 @media (prefers-reduced-motion:reduce){.home-fl,.home-fl path,.home-fl circle{animation:none;stroke-dashoffset:0;transform:none}.rw{transition:none}}
-.home-fl{position:absolute;right:60px;top:50%;width:208px;height:208px;margin-top:-104px;color:color-mix(in srgb,var(--text) 8%,var(--bg-2))}
+.home-fl{position:absolute;right:60px;top:50%;width:208px;height:208px;margin-top:-104px;color:color-mix(in srgb,var(--text) 14%,var(--bg-2))}
 .apps{padding:0 0 64px}
 .grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
 /* 앱 5개: 위 2개 넓게(3칸씩)·아래 3개(2칸씩) — 3열에 5개를 놓으면 빈칸이 남음(11-09) */
@@ -134,7 +135,7 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 
 @media (max-width:760px){
  .home-top{padding-top:12px}.home-band{min-height:0;padding:96px 24px 32px;align-items:flex-end}.home-h{font-size:28px}.home-band:has(.home-lead){justify-content:flex-end}.home-lead{font-size:16px}
- .home-fl{right:20px;top:24px;margin-top:0;width:59px;height:59px}
+ .home-fl{right:-4px;top:8px;margin-top:0;width:124px;height:124px}
  .card{min-height:430px}
  .hero-in{grid-template-columns:1fr;gap:8px;padding-top:40px;min-height:0;text-align:center}
  .hero-txt{padding-bottom:24px}.app-hero .icon{margin:0 auto}
