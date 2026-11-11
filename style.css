@@ -6,7 +6,7 @@
 font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Apple SD Gothic Neo","Pretendard","Noto Sans KR","Hiragino Sans","PingFang SC","Microsoft YaHei",sans-serif;
 color-scheme:light dark}
 @media (prefers-color-scheme:dark){:root{--bg:#111111;--bg-2:#181818;--text:#F4F4F4;--text-2:#A8A8A8;--line:#2A2A2A;--link:#5aa9ff;--frame:#2b2b2b;
---nav:rgba(17,17,17,.82);--tint-mix:22%;--row-mix:9%;--no-mix:45%;--band-mix:8%;--band-base:#030303;--tint-base:#141414}}
+--nav:rgba(17,17,17,.82);--tint-mix:22%;--row-mix:9%;--no-mix:45%;--band-mix:8%;--band-base:#030303;--tint-base:#141414}.row{--no-mix:45%}}
 :lang(ko){font-family:"Pretendard Variable",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
 :lang(en),:lang(es),:lang(pt-BR),:lang(de),:lang(fr),:lang(it),:lang(ru),:lang(tr),:lang(id),:lang(vi){font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-feature-settings:"cv11"}
 :lang(zh-Hans){font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
@@ -16,7 +16,8 @@ color-scheme:light dark}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:64px}
 body{margin:0;background:var(--bg);color:var(--text);font-size:17px;line-height:1.55;letter-spacing:-.01em;word-break:keep-all;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased}
 a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
-a:focus-visible,summary:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:6px}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:6px}
+.app-hero a:focus-visible,.end a:focus-visible{outline-color:var(--on)}   /* 앱 색 면 위에서도 보이게(11-11 접근성 점검) */
 img{max-width:100%;height:auto}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
 .narrow{max-width:760px}
@@ -33,7 +34,7 @@ h2{font-size:clamp(30px,4.4vw,52px)}
 .brand{display:flex;align-items:center;gap:8px;color:var(--text);font-weight:800;font-size:19px;letter-spacing:-.02em}.brand:hover{text-decoration:none}
 .logo{width:26px;height:26px}
 .nav-links{display:flex;align-items:center;gap:20px;font-size:14px}
-.lang{position:relative}.lang summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;color:var(--text);font-weight:600}
+.lang{position:relative}.lang summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;min-height:32px;color:var(--text);font-weight:600}
 .lang summary::-webkit-details-marker{display:none}
 .lang svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
 .lang ul{position:absolute;right:0;top:34px;margin:0;padding:8px;list-style:none;background:var(--bg);border:1px solid var(--line);border-radius:14px;min-width:170px;box-shadow:0 14px 40px rgba(0,0,0,.18)}
@@ -84,9 +85,9 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 .hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);align-items:center;gap:40px;padding-top:64px;padding-bottom:0;min-height:560px}
 .hero-txt{padding-bottom:64px}
 .app-hero h1{font-size:clamp(48px,8vw,104px);letter-spacing:-.05em;margin-top:22px}
-.app-hero .sub{font-size:clamp(19px,2.4vw,25px);font-weight:600;margin:10px 0 0;opacity:.85}
+.app-hero .sub{font-size:clamp(19px,2.4vw,25px);font-weight:600;margin:10px 0 0}
 .app-hero .cta{margin-top:30px}
-.app-hero .note{opacity:.75;font-size:13px;margin:12px 0 0}
+.app-hero .note{font-size:13px;margin:12px 0 0}
 .hero-shot{margin:0;align-self:end;justify-self:center;width:min(380px,100%);transform:translateY(12%) rotate(4deg)}
 .hero-shot img{display:block;width:100%;border-radius:13%/6%;border:8px solid #111;box-shadow:0 30px 70px rgba(0,0,0,.35)}
 .hero-big{align-self:center;justify-self:center;width:200px;height:200px;transform:rotate(-8deg);margin-bottom:64px}
@@ -110,7 +111,7 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 
 /* 바닥글 */
 .foot{border-top:1px solid var(--line);padding:28px 0 40px;font-size:13px;color:var(--text-2)}
-.foot-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}.foot-links a{color:var(--text)}
+.foot-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}.foot-links a{color:var(--text);display:inline-block;padding:6px 0}
 @media (max-width:640px){.foot{text-align:center}.foot-links{justify-content:center}.foot-links .fine{flex-basis:100%;margin:6px 0 0}}   /* 모바일 바닥글 가운데(11-09 종인님) */
 .fine{margin-left:auto}
 .entrance{padding:64px 16px}.entrance ul{list-style:none;padding:0;display:grid;gap:8px}
@@ -135,10 +136,10 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 .end .cta{justify-content:center}
 .qr{display:flex;align-items:center;gap:12px;padding:8px 14px 8px 8px;border-radius:18px;background:color-mix(in srgb,var(--on) 14%,transparent)}
 .qr svg{width:92px;height:92px;padding:6px;background:#fff;border-radius:12px;fill:#111}
-.qr span{font-size:13px;font-weight:600;line-height:1.35;max-width:9em;opacity:.9}
+.qr span{font-size:13px;font-weight:600;line-height:1.35;max-width:9em}
 @media (max-width:760px),(hover:none){.qr{display:none}}
 /* 출시 전 알롱: 폰 틀 대신 부분 확대 카드 + '개발 중' 안내(allong.my 공개판과 같은 자료) */
-.wip{font-size:12px;opacity:.6;text-align:center;margin:12px 0 0}
+.wip{font-size:12px;color:var(--text-2);text-align:center;margin:12px 0 0}.app-hero .wip{color:var(--on)}
 /* 앱 바로 가기 드롭다운(머리 막대) */
 .appm ul{min-width:200px}
 .appm li a{display:flex;align-items:center;gap:10px}
@@ -160,7 +161,7 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 @media (max-width:760px){.app-hero .cta{justify-content:center}}
 
 /* 기능 구간(11-09 — Streaks: 번호·제목·한 줄 + 그림 하나를 번갈아, 토스: 연한 면 위 화면 조각) */
-.row{padding:clamp(56px,8vw,112px) 0}
+.row{padding:clamp(56px,8vw,112px) 0;--no-mix:var(--no-mix-l,100%)}   /* 라이트 번호 색은 앱마다 4.5:1 되는 비율(build.py no_mix) */
 .row.alt{background:color-mix(in srgb,var(--tint) var(--row-mix),var(--tint-base))}
 .row-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(32px,6vw,88px)}
 .row.alt .r-txt{order:2}
@@ -195,4 +196,5 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 .consent[hidden]{display:none}
 .consent p{flex:1 1 240px;margin:0}
 .consent a{color:inherit;text-decoration:underline}
+.consent button:focus-visible{outline-color:#fff}
 .consent button{font:inherit;font-weight:600;border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:8px 18px;min-height:44px;cursor:pointer;background:transparent;color:#fff}
