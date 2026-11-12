@@ -31,7 +31,7 @@ h2{font-size:clamp(30px,4.4vw,52px)}
 /* 머리 막대 */
 .nav{position:sticky;top:0;z-index:5;background:var(--nav);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:56px}
-.brand{display:flex;align-items:center;gap:8px;color:var(--text);font-weight:800;font-size:19px;letter-spacing:-.02em}.brand:hover{text-decoration:none}
+.brand{display:flex;align-items:center;gap:6px;color:var(--text);font-weight:800;font-size:19px;letter-spacing:-.02em}.brand:hover{text-decoration:none}
 .logo{width:29px;height:29px;margin:-1.5px 0}
 .nav-links{display:flex;align-items:center;gap:20px;font-size:14px}
 .lang{position:relative}.lang summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;min-height:32px;color:var(--text);font-weight:600}
