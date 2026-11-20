@@ -1,6 +1,6 @@
-# ihwa
+# IHWA
 
-> ihwa makes everyday life more delightful. Let your day bloom a little more.
+> IHWA makes everyday life more delightful. Let your day bloom a little more.
 
 ## Apps
 
