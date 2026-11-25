@@ -106,6 +106,7 @@ background:color-mix(in srgb,var(--tint) var(--tint-mix),var(--tint-base));color
 .hero-big{align-self:center;justify-self:center;width:200px;height:200px;transform:rotate(-8deg);margin-bottom:64px}
 .get{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:99px;background:var(--on);color:var(--solid);font-weight:800;font-size:17px}
 .get:hover{text-decoration:none;opacity:.9}
+.get.badge{padding:0;background:none;border-radius:8px}.get.badge img{display:block;height:54px;width:auto}.get.badge:hover{opacity:1}
 .get svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .app-hero .chip.soon{background:color-mix(in srgb,var(--on) 18%,transparent);color:var(--on)}
 
